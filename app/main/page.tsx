@@ -1,5 +1,11 @@
+'use client';
+
+import { useRouter } from "next/navigation"
+
 export default function TestPage() {
-    return (
+  const router = useRouter();
+
+   return (
     <>
       <aside className="fixed left-0 top-0 h-screen w-[250px] bg-white text-black p-6 border-r border-gray-300 flex flex-col ">
         <h2 className="text-xl font-bold mb-6 cursor-pointer p-1 rounded">Instagram</h2>
@@ -11,7 +17,9 @@ export default function TestPage() {
           <li className="hover:bg-gray-300 p-2 rounded">릴스</li>
           <li className="hover:bg-gray-300 p-2 rounded">메시지</li>
           <li className="hover:bg-gray-300 p-2 rounded">알림</li>
-          <li className="hover:bg-gray-300 p-2 rounded">만들기</li>
+          <li className="hover:bg-gray-300 p-2 rounded cursor-pointer"
+           onClick={() => router.push('/posts')}>만들기</li>
+
           <li className="hover:bg-gray-300 p-2 rounded">프로필</li>  
         </ul>
         <ul>
@@ -50,10 +58,10 @@ export default function TestPage() {
     style={{
       display:'flex',
       alignItems: 'center',
-      width: '220vh',
+      width: '200vh',
       height: 'auto',
-      gap: '10px',
-      fontSize: '13px',
+      gap: '8px',
+      fontSize: '12px',
       flexDirection:'column'
       }}>
 
@@ -66,57 +74,57 @@ export default function TestPage() {
       gap: '20px'
     }}>
       <div style={{
-      width: '70px', 
-      height: '70px', 
+      width: '60px', 
+      height: '60px', 
       borderRadius: '50%', 
       border: '0.5px solid black'
     }}>
       </div>
       <div style={{
-      width: '70px', 
-      height: '70px', 
+      width: '60px', 
+      height: '60px', 
       borderRadius: '50%', 
       border: '0.5px solid black'
     }}>
       </div>
       <div style={{
-      width: '70px', 
-      height: '70px', 
+      width: '60px', 
+      height: '60px', 
       borderRadius: '50%', 
       border: '0.5px solid black'
     }}>
       </div>
       <div style={{
-      width: '70px', 
-      height: '70px', 
+      width: '60px', 
+      height: '60px', 
       borderRadius: '50%', 
       border: '0.5px solid black'
     }}>
       </div>
       <div style={{
-      width: '70px', 
-      height: '70px', 
+      width: '60px', 
+      height: '60px', 
       borderRadius: '50%', 
       border: '0.5px solid black'
     }}>
       </div>
       <div style={{
-      width: '70px', 
-      height: '70px', 
+      width: '60px', 
+      height: '60px', 
       borderRadius: '50%', 
       border: '0.5px solid black'
     }}>
       </div>
       <div style={{
-      width: '70px', 
-      height: '70px', 
+      width: '60px', 
+      height: '60px', 
       borderRadius: '50%', 
       border: '0.5px solid black'
     }}>
       </div>
       <div style={{
-      width: '70px', 
-      height: '70px', 
+      width: '60px', 
+      height: '60px', 
       borderRadius: '50%', 
       border: '0.5px solid black'
     }}>
@@ -126,10 +134,10 @@ export default function TestPage() {
     <div className='post' style={{
                                 display: 'flex',
                                 flexDirection: 'column',
-                                width: '410px',
+                                width: '420px',
                                 height: 'auto',
                                 backgroundColor: 'solid black',
-                                gap:'10px'
+                                gap:'3px'
                                 
                                 
 
@@ -140,7 +148,7 @@ export default function TestPage() {
                               justifyContent:'center',
                               alignItems:'center',
                               flexDirection:'row',
-                              height: '60px',
+                              height: '55px',
                               gap: '10px'
                               }}>
     <div style={{
