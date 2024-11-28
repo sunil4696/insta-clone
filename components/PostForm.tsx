@@ -1,11 +1,14 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation'; 
 
 const PostForm = () => {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+
+  const router = useRouter(); 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,7 +21,7 @@ const PostForm = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ content }), // user_id는 제외
+      body: JSON.stringify({ content }), 
     });
 
     const data = await response.json();
@@ -26,6 +29,8 @@ const PostForm = () => {
     if (response.ok) {
       setSuccess('게시물이 성공적으로 등록되었습니다!');
       setContent('');
+
+      router.push('/main'); 
     } else {
       setError(data.error || '게시물 등록에 실패했습니다.');
     }
